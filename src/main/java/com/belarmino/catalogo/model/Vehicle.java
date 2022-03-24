@@ -28,4 +28,10 @@ public class Vehicle {
 
     private String photo;
 
+    @Column(nullable = false)
+    private Double price;
+
+    @Column(nullable = false)
+    private Integer year;
+
 }

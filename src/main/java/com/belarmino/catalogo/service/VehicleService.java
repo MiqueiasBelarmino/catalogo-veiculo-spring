@@ -4,10 +4,11 @@ import com.belarmino.catalogo.model.Vehicle;
 import com.belarmino.catalogo.repository.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class VehicleService {
 
     @Autowired
@@ -15,6 +16,10 @@ public class VehicleService {
 
     public List<Vehicle> list(){
         return vehicleRepository.findAll();
+    }
+
+    public List<Vehicle> listByBrand(String brand){
+        return vehicleRepository.findByBrand(brand);
     }
 
     public Vehicle save(Vehicle vehicle){

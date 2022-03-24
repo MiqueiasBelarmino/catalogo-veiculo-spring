@@ -24,4 +24,8 @@ public class VehicleController {
     public ResponseEntity<Vehicle> save(@RequestBody Vehicle vehicle){
         return ResponseEntity.ok(vehicleService.save(vehicle));
     }
+    @PostMapping("/brand")
+    public ResponseEntity<List<Vehicle>> listByBrand(@RequestBody String brand){
+        return ResponseEntity.ok(vehicleService.listByBrand(brand));
+    }
 }
